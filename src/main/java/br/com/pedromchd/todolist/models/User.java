@@ -2,10 +2,34 @@ package br.com.pedromchd.todolist.models;
 
 public class User {
     
-    public String username;
+    private String username;
 
-    public String fullname;
+    private String fullname;
 
-    public String password;
+    private String password;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
 }
