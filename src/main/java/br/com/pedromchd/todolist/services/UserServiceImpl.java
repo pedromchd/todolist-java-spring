@@ -3,12 +3,14 @@ package br.com.pedromchd.todolist.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.pedromchd.todolist.dtos.UserDTO;
 import br.com.pedromchd.todolist.models.User;
 import br.com.pedromchd.todolist.repositories.UserRepository;
 import br.com.pedromchd.todolist.services.interfaces.UserService;
 
+@Service
 public class UserServiceImpl implements UserService {
     
     @Autowired
