@@ -28,6 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(UserDTO userDTO) {
+        if (userRepository.existsByUsername(userDTO.username())) {
+            return null;
+        }
         User user = new User();
         user.setUsername(userDTO.username());
         user.setFullname(userDTO.fullname());
