@@ -1,4 +1,4 @@
-package br.com.pedromchd.todolist.services.interfaces;
+package br.com.pedromchd.todolist.service;
 
 import java.util.List;
 
