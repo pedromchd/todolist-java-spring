@@ -1,4 +1,4 @@
-package br.com.pedromchd.todolist.models;
+package br.com.pedromchd.todolist.model;
 
 import java.time.LocalDateTime;
 
