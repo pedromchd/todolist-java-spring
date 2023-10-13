@@ -1,4 +1,4 @@
-package br.com.pedromchd.todolist.controllers;
+package br.com.pedromchd.todolist.controller;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.pedromchd.todolist.dtos.UserDTO;
-import br.com.pedromchd.todolist.models.User;
-import br.com.pedromchd.todolist.services.interfaces.UserService;
+import br.com.pedromchd.todolist.dto.UserDTO;
+import br.com.pedromchd.todolist.model.User;
+import br.com.pedromchd.todolist.service.UserService;
 
 @RestController
 @RequestMapping("/users")
