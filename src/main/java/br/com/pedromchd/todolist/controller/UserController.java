@@ -28,29 +28,29 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<User>> getAll() {
         List<User> users = userService.getAll();
-        return ResponseEntity.ok().body(users);
+        return new ResponseEntity<List<User>>(users, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getById(@PathVariable Integer id) {
         User user = userService.getById(id);
-        return ResponseEntity.ok().body(user);
+        return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<String> save(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<User> save(@RequestBody UserDTO userDTO) {
         User user = userService.save(userDTO);
         if (user == null) {
-            return new ResponseEntity<String>("Usuário informado já existe", HttpStatus.CONFLICT);
+            return new ResponseEntity<User>(user, HttpStatus.CONFLICT);
         } else {
-            return new ResponseEntity<String>("Usuário criado com sucesso", HttpStatus.CREATED);
+            return new ResponseEntity<User>(user, HttpStatus.CREATED);
         }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<User> update(@PathVariable Integer id, @RequestBody UserDTO userDTO) {
         User user = userService.update(id, userDTO);
-        return ResponseEntity.ok().body(user);
+        return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
