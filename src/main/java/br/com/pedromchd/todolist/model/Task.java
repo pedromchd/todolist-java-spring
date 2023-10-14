@@ -38,20 +38,20 @@ public class Task {
     @Column(length = 50, nullable = false)
     private String title;
 
-    @Column(length = 255)
+    @Column(length = 255, nullable = true)
     private String description;
 
     @Column(nullable = false)
     private LocalDateTime startAt;
 
-    @Column
+    @Column(nullable = true)
     private LocalDateTime endAt;
 
-    @Column
+    @Column(nullable = false)
     @Enumerated
     private Priority priority;
 
-    private enum Priority {
+    public enum Priority {
         LOW,
         MEDIUM,
         HIGH
