@@ -47,14 +47,15 @@ public class AuthFilter extends OncePerRequestFilter {
             if (user != null) {
                 if (BCrypt.checkpw(password, user.getPassword())) {
                     filterChain.doFilter(request, response);
+                } else {
+                    response.sendError(HttpStatus.UNAUTHORIZED.value(), "A senha informada está incorreta");
                 }
+            } else {
+                response.sendError(HttpStatus.UNAUTHORIZED.value(), "Usuário informado não encontrado");
             }
-
-            response.sendError(HttpStatus.UNAUTHORIZED.value(), "Credenciais incorretas");
-
+        } else {
+            filterChain.doFilter(request, response);
         }
-
-        filterChain.doFilter(request, response);
 
     }
 
