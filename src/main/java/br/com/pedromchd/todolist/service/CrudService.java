@@ -3,7 +3,7 @@ package br.com.pedromchd.todolist.service;
 import java.util.List;
 
 public interface CrudService<Model, DTO> {
-    
+
     List<Model> getAll();
 
     Model getById(Integer id);

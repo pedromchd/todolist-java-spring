@@ -22,7 +22,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class User {
-    
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,15 +30,15 @@ public class User {
 
     @Column(length = 100, unique = true)
     private String username;
-    
+
     @Column(length = 100, nullable = false)
     private String fullname;
-    
+
     @Column(length = 255, nullable = false)
     private String password;
 
     @Column
     @CreationTimestamp
     private LocalDateTime createdAt;
-    
+
 }

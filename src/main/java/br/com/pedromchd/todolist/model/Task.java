@@ -25,7 +25,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class Task {
-    
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,16 +37,16 @@ public class Task {
 
     @Column(length = 50, nullable = false)
     private String title;
-    
+
     @Column(length = 255)
     private String description;
-    
+
     @Column(nullable = false)
     private LocalDateTime startAt;
-    
+
     @Column
     private LocalDateTime endAt;
-    
+
     @Column
     @Enumerated
     private Priority priority;
@@ -56,7 +56,7 @@ public class Task {
         MEDIUM,
         HIGH
     }
-    
+
     @Column
     @CreationTimestamp
     private LocalDateTime createdAt;
