@@ -41,9 +41,9 @@ public class UserController {
     public ResponseEntity<String> save(@RequestBody UserDTO userDTO) {
         User user = userService.save(userDTO);
         if (user == null) {
-            return new ResponseEntity<String>("Usuário informado já existe.", HttpStatus.CONFLICT);
+            return new ResponseEntity<String>("Usuário informado já existe", HttpStatus.CONFLICT);
         } else {
-            return new ResponseEntity<String>("Usuário criado com sucesso!", HttpStatus.CREATED);
+            return new ResponseEntity<String>("Usuário criado com sucesso", HttpStatus.CREATED);
         }
     }
 
