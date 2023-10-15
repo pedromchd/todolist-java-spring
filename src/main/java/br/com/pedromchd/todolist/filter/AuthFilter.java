@@ -28,7 +28,7 @@ public class AuthFilter extends OncePerRequestFilter {
 
         String route = request.getServletPath();
 
-        if (route.equals("/tasks")) {
+        if (route.startsWith("/tasks")) {
 
             String auth = request.getHeader("Authorization");
 
